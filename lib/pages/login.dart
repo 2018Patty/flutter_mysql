@@ -71,7 +71,7 @@ class _LoginFormState extends State<LoginForm> {
             msg: "Check Username and Password",
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.BOTTOM,
-            timeInSecForIosWeb: 1,
+            timeInSecForIosWeb: 5,
             backgroundColor: Theme.of(context).primaryColor,
             textColor: Colors.white,
             fontSize: 16.0);

@@ -2,13 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:fluttermysql/asyncdemo.dart';
 import 'package:fluttermysql/pages/adduser.dart';
 import 'package:fluttermysql/pages/edituser.dart';
 import 'package:fluttermysql/pages/login.dart';
 import 'package:fluttermysql/pages/profile.dart';
-import 'package:fluttermysql/pages/splashscreen.dart';
 import 'package:http/http.dart' as http;
-import 'package:splashscreen/splashscreen.dart';
+
+
+
 
 import 'cardnews.dart';
 
@@ -43,6 +45,7 @@ void main() => runApp(new MaterialApp(
       ),
       initialRoute: '/home',
       routes: {
+        '/async' : (context)=> AsyncDemo(),
         '/home': (context) => Home(),
         '/login': (context) => LoginForm(),
         '/CardNews': (context) => CardNews(),
@@ -62,13 +65,13 @@ class _State extends State<Home> {
     var response = await http.get(url);
     return json.decode(response.body);
   }
-  void initState() {
-    super.initState();
-    Timer(
-        const Duration(seconds: 1),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Splashscreen())));
-  }
+  // void initState() {
+  //   super.initState();
+  //   Timer(
+  //       const Duration(seconds: 1),
+  //       () => Navigator.pushReplacement(
+  //           context, MaterialPageRoute(builder: (context) => Splashscreen())));
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

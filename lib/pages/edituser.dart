@@ -23,7 +23,7 @@ class _EditUserState extends State<EditUser> {
     if (editMode) {
       // var url = 'https://pattyteacher.000webhostapp.com/edit.php';
       var url = "http://localhost/addressbook/edit.php";
-      http.post(url, body: {
+      await http.post(url, body: {
         //'id' : widget.list[widget.index]['id'],
         'fullname': fullname.text,
         'username': user.text,

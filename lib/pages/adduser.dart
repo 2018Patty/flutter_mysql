@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:fluttermysql/main.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:toast/toast.dart';
+// import 'package:toast/toast.dart';
 
 class AddUser extends StatefulWidget {
   @override
@@ -36,12 +37,20 @@ class _AddUserState extends State<AddUser> {
       var data = json.decode(response.body);
       print(data);
       if (data == "Error") {
-        Toast.show(
-          "Username already exist",
-          context,
-          duration: Toast.LENGTH_SHORT,
-          gravity: Toast.BOTTOM,
-        );
+        Fluttertoast.showToast(
+            msg: "Username already exist",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 5,
+            backgroundColor: Theme.of(context).primaryColor,
+            textColor: Colors.white,
+            fontSize: 16.0);
+        // Toast.show(
+        //   "Username already exist",
+        //   context,
+        //   duration: Toast.LENGTH_SHORT,
+        //   gravity: Toast.BOTTOM,
+        // );
       } else if (data == "Success") {
         Navigator.push(
           context,
@@ -50,12 +59,20 @@ class _AddUserState extends State<AddUser> {
           ),
         );
       } else {
-        Toast.show(
-          "Insert Error",
-          context,
-          duration: Toast.LENGTH_SHORT,
-          gravity: Toast.BOTTOM,
-        );
+        Fluttertoast.showToast(
+            msg: "Insert Error",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 5,
+            backgroundColor: Theme.of(context).primaryColor,
+            textColor: Colors.white,
+            fontSize: 16.0);
+        // Toast.show(
+        //   "Insert Error",
+        //   context,
+        //   duration: Toast.LENGTH_SHORT,
+        //   gravity: Toast.BOTTOM,
+        // );
       }
     }
   }
@@ -100,7 +117,7 @@ class _AddUserState extends State<AddUser> {
                 ),
               ),
               //SizedBox(height: 20),
-              RaisedButton(
+              ElevatedButton(
                 child: new Text("ADD DATA"),
                 onPressed: () {
                   addUser();
