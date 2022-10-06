@@ -16,13 +16,13 @@ class _UserListState extends State<UserList> {
           'The Arc de Triomphe  is one of the most famous monuments in Paris, France, standing at the western end of the Champs-Élysées at the centre of Place Charles de Gaulle.'
     },
     {
-      'name': 'Arc de Triomphe',
+      'name': 'Louvre Museum',
       'address': 'Place Charles de Gaulle, Paris, France',
       'info':
           'The Arc de Triomphe  is one of the most famous monuments in Paris, France, standing at the western end of the Champs-Élysées at the centre of Place Charles de Gaulle.'
     },
     {
-      'name': 'Arc de Triomphe',
+      'name': 'Versailles',
       'address': 'Place Charles de Gaulle, Paris, France',
       'info':
           'The Arc de Triomphe  is one of the most famous monuments  in Paris, France, standing at the western end of the Champs-Élysées at the centre of Place Charles de Gaulle.'

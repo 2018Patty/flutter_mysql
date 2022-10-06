@@ -44,7 +44,7 @@ void main() => runApp(new MaterialApp(
         //   secondary: Color(0xFFd81b60),
         // ),
       ),
-      initialRoute: '/home',
+      initialRoute: '/cardNews',
       routes: {
         '/userlist': (context)=> UserList(),
         '/async' : (context)=> AsyncDemo(),

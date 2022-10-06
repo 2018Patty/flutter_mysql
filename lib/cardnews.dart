@@ -13,7 +13,11 @@ class CardNews extends StatelessWidget {
       appBar: AppBar(
         title: Text('Card'),
       ),
-      body: buildCardCat(context, para),
+      body: ListView.builder(
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return buildCardCat(context, para);
+          }),
     );
   }
 
@@ -22,7 +26,7 @@ class CardNews extends StatelessWidget {
 
   Widget buildCardCat(BuildContext context, String para) {
     return Container(
-      height:400,
+      height: 400,
       // width: 300,
       child: Card(
         clipBehavior: Clip.antiAlias,
@@ -31,7 +35,6 @@ class CardNews extends StatelessWidget {
           borderRadius: BorderRadius.circular(0),
         ),
         child: Column(
-          
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Stack(
@@ -66,8 +69,8 @@ class CardNews extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'วิเชียรมาศ บางตำราเรียก แมวแก้ว เป็นแมวไทยโบราณ ตำราว่า ตัวเป็นสีดำดังหมึกวาด และเป็นแมวมงคล',
+                child: Text(para,
+                  // 'วิเชียรมาศ บางตำราเรียก แมวแก้ว เป็นแมวไทยโบราณ ตำราว่า ตัวเป็นสีดำดังหมึกวาด และเป็นแมวมงคล',
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
