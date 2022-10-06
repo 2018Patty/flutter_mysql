@@ -17,18 +17,22 @@ class CardNews extends StatelessWidget {
     );
   }
 
+// double width = MediaQuery.of(context).size.width;
+// double height = MediaQuery.of(context).size.height;
+
   Widget buildCardCat(BuildContext context, String para) {
     return Container(
-      height: 370,
-      width: 250,
+      height:400,
+      // width: 300,
       child: Card(
         clipBehavior: Clip.antiAlias,
         color: Colors.amber,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(0),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Stack(
               children: [
@@ -37,30 +41,39 @@ class CardNews extends StatelessWidget {
                   image: NetworkImage(
                     'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80',
                   ),
-                  // height: 150,
-                  // width: MediaQuery.of(context).size.width * 0.5,
-                  fit: BoxFit.fill,
+                  //height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.fitWidth,
+                  // fit: BoxFit.fill,
                 ),
                 Positioned(
                   bottom: 16,
                   right: 16,
-                  left: 16,
-                  child: Text(
-                    'วิเชียรมาศ',
-                    style: Theme.of(context).textTheme.headline3,
+                  child: Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Text(
+                      'วิเชียรมาศ',
+                      style: Theme.of(context).textTheme.headline3,
+                      textAlign: TextAlign.right,
+                    ),
                   ),
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'วิเชียรมาศ บางตำราเรียก แมวแก้ว เป็นแมวไทยโบราณ ตำราว่า ตัวเป็นสีดำดังหมึกวาด และเป็นแมวมงคล',
-                style: Theme.of(context).textTheme.bodyText1,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'วิเชียรมาศ บางตำราเรียก แมวแก้ว เป็นแมวไทยโบราณ ตำราว่า ตัวเป็นสีดำดังหมึกวาด และเป็นแมวมงคล',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
               ),
             ),
-            ButtonBar(
-              alignment: MainAxisAlignment.end,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
                   onPressed: () {},

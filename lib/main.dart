@@ -7,6 +7,7 @@ import 'package:fluttermysql/pages/adduser.dart';
 import 'package:fluttermysql/pages/edituser.dart';
 import 'package:fluttermysql/pages/login.dart';
 import 'package:fluttermysql/pages/profile.dart';
+import 'package:fluttermysql/userlist.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -45,10 +46,11 @@ void main() => runApp(new MaterialApp(
       ),
       initialRoute: '/home',
       routes: {
+        '/userlist': (context)=> UserList(),
         '/async' : (context)=> AsyncDemo(),
         '/home': (context) => Home(),
         '/login': (context) => LoginForm(),
-        '/CardNews': (context) => CardNews(),
+        '/cardNews': (context) => CardNews(),
       },
     ));
 
